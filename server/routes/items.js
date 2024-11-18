@@ -30,5 +30,43 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//post Item to add item 
+router.post("/", async (req,res)=>{
+  try{
+    const newItem= await Item.create(req.body);
+    res.status(201).json(newItem)
+  }catch(err){
+    res.status(400).json({ err: "Failed to add item" });
+  }
+});
+
+//Delete Items 
+router.delete("/:id", async (req,res)=>{
+  try{
+    const deleteItem = await Item.destroy({where:{id:req.params.id}})
+    if(deleteItem){
+      res.status(204).send();
+    }else{
+      res.status(404).json({ error: "Item not found" });
+    }
+  }catch(err){
+        res.status(500).json({ err: "Failed to delete item" });
+  }
+});
+
+//PUT updating an Item
+router.put('/:id', async (req,res) => {
+  try {
+    const [updated] = await Item.update(req.body, { where: { id: req.params.id } });
+    if (updated) {
+      const updatedItem = await Item.findByPk(req.params.id);
+      res.status(200).json(updatedItem);
+    } else {
+      res.status(404).json({ error: 'Item not found' });
+    }
+  } catch (error) {
+    res.status(400).json({ error: 'Failed to update item' });
+  }
+});
 
 module.exports = router;
