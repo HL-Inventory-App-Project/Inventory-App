@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ItemsStyles.module.css";
 import ItemsCard from './ItemsCard';
-import bread from "../../../assets/bread.png";
-import bread2 from "../../../assets/bread2.png"
-import bread3 from "../../../assets/bread3.png"
 
 function Items() {
   const [items, setItems] = useState([]);

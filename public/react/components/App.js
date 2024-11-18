@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <h1>Inventory App</h1>
+      <h1 className="logo">Inventory App</h1>
       <Items/>
     </>
   );

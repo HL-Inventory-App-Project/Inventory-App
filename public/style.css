@@ -16,3 +16,9 @@ body {
 img {
   max-width: 100%;
 }
+
+.logo{
+  text-align: center;
+  font-family: "Sour Gummy", sans-serif;
+  color: palevioletred;
+}
