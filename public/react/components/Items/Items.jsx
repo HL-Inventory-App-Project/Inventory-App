@@ -34,6 +34,7 @@ function Items() {
       price="£4.20"
       category="bread3"
       />
+      
       </div>
     </section>
     </>
