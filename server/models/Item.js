@@ -5,7 +5,11 @@ class Item extends Model {}
 
 Item.init(
   {
-    // Define your columns here
+    name: DataTypes.STRING,
+    price: DataTypes.NUMBER,
+    description: DataTypes.STRING,
+    category: DataTypes.STRING,
+    image: DataTypes.STRING
   },
   {
     sequelize,
