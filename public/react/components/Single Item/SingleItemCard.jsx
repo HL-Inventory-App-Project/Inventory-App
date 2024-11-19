@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from "./ItemStyles.module.css";
 
 function ItemCard({ link, name, src, description, price, category }) {
 
@@ -19,18 +20,20 @@ function ItemCard({ link, name, src, description, price, category }) {
 	  }
 
   return (
-    <div>
-    	<img src={src}></img>
-		<div>
-    		<h3>{name}</h3>
+	<a className={styles.item}>
+		<div className={styles.itemText}>
+			<h3>{name}</h3>
 			<h4>£{price}</h4>
-    		<p>{description}</p>
+			<p>{description}</p>
 			<h4>Category:</h4>
-    		<p>{category}</p>
-			<button onClick={deleteItem}>Delete Item</button>
-			<button onClick={goHome}>Back to Home</button>
+			<p>{category}</p>
+			<div>
+				<button onClick={deleteItem}><span>Delete Item</span></button>
+				<button onClick={goHome}><span>Back to Home</span></button>
+			</div>
 		</div>
-    </div>
+		<img src={src}></img>
+	</a>
   )
 }
 
