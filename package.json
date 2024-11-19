@@ -2,7 +2,7 @@
   "name": "inventoryapp",
   "version": "2.0.1",
   "scripts": {
-    "test": "npm run seed && jest",
+    "test": "npm run seed && jest && npm run seed",
     "client-dev": "rm -rf .parcel-cache && parcel public/index.html --open",
     "server-dev": "nodemon server.js",
     "seed": "node server/seed.js",
