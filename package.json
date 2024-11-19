@@ -2,7 +2,7 @@
   "name": "inventoryapp",
   "version": "2.0.1",
   "scripts": {
-    "test": "jest",
+    "test": "npm run seed && jest",
     "client-dev": "parcel public/index.html --open",
     "server-dev": "nodemon server.js",
     "seed": "node server/seed.js",
@@ -17,7 +17,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sequelize": "^6.23.2",
-    "sqlite3": "^5.1.1"
+    "sqlite3": "^5.1.1",
+    "supertest": "^7.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.15.0",
