@@ -64,19 +64,19 @@ function ItemCard({ link, name, src, description, price, category }) {
         <p>{description}</p>
         <h4>Category:</h4>
         <p>{category}</p>
-		<div>
-			<button onClick={hideForm}>
-			<span>Edit Item</span>
-			</button>
+        <div>
+          <button onClick={hideForm}>
+            <span>Edit Item</span>
+          </button>
 
-			<button onClick={deleteItem}>
-			<span>Delete Item</span>
-			</button>
+          <button onClick={deleteItem}>
+            <span>Delete Item</span>
+          </button>
 
-			<button onClick={goHome}>
-			<span>Back to Home</span>
-			</button>
-		</div>
+          <button onClick={goHome}>
+            <span>Back to Home</span>
+          </button>
+        </div>
         {formHidden ? null : (
           <form
             onSubmit={(event) => {
@@ -88,7 +88,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               <input
                 type="text"
                 value={formName}
-		defaultValue={name}
+                defaultValue={name}
                 onChange={(e) => setName(e.target.value)}
                 required
               />
@@ -98,7 +98,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               <textarea
                 type="text"
                 value={formDescription}
-		defaultValue={description}
+                defaultValue={description}
                 onChange={(e) => setDescription(e.target.value)}
                 required
               />
@@ -107,9 +107,9 @@ function ItemCard({ link, name, src, description, price, category }) {
               Enter price:
               <input
                 type="text"
-				        placeholder="£"
+                placeholder="£"
                 value={formPrice}
-		defaultValue={"£" + price}
+                defaultValue={"£" + price}
                 onChange={(e) => setPrice(e.target.value)}
                 required
               />
@@ -119,7 +119,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               <input
                 type="text"
                 value={formCategory}
-		defaultValue={category}
+                defaultValue={category}
                 onChange={(e) => setCategory(e.target.value)}
                 required
               />
@@ -129,12 +129,12 @@ function ItemCard({ link, name, src, description, price, category }) {
               <input
                 type="text"
                 value={formImage}
-		defaultValue={src}
+                defaultValue={src}
                 onChange={(e) => setImage(e.target.value)}
                 required
               />
             </label>
-            <input type="submit" />
+            <input type="submit" value="Submit"/>
           </form>
         )}
       </div>
