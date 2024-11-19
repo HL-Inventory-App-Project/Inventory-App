@@ -5,11 +5,12 @@
 }
 
 img {
-  width: 250px;
+  width: 300px;
   align-content: flex-end;
   border-radius: 10px;
   max-height: 275px;
   justify-content: end;
+  padding: 10px;
 }
 
 .item {
@@ -77,4 +78,21 @@ button:hover span {
 button:hover span:after {
   opacity: 2;
   right: 0;
+}
+
+form{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px
+}
+
+label{
+  padding: 10px;
+}
+
+textarea{
+  width: 500px;
+  height: 250px;
 }

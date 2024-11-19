@@ -65,10 +65,19 @@ function ItemCard({ link, name, src, description, price, category }) {
         <p>{description}</p>
         <h4>Category:</h4>
         <p>{category}</p>
-        <button onClick={hideForm}>
-          <span>Edit Item</span>
-        </button>
+		<div>
+			<button onClick={hideForm}>
+			<span>Edit Item</span>
+			</button>
 
+			<button onClick={deleteItem}>
+			<span>Delete Item</span>
+			</button>
+
+			<button onClick={goHome}>
+			<span>Back to Home</span>
+			</button>
+		</div>
         {formHidden ? null : (
           <form
             onSubmit={(event) => {
@@ -85,7 +94,7 @@ function ItemCard({ link, name, src, description, price, category }) {
             </label>
             <label>
               Enter description:
-              <input
+              <textarea
                 type="text"
                 value={formDescription}
                 onChange={(e) => setDescription(e.target.value)}
@@ -95,6 +104,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               Enter price:
               <input
                 type="text"
+				placeholder="£"
                 value={formPrice}
                 onChange={(e) => setPrice(e.target.value)}
               />
@@ -118,12 +128,6 @@ function ItemCard({ link, name, src, description, price, category }) {
             <input type="submit" />
           </form>
         )}
-        <button onClick={deleteItem}>
-          <span>Delete Item</span>
-        </button>
-        <button onClick={goHome}>
-          <span>Back to Home</span>
-        </button>
       </div>
     </div>
   );
