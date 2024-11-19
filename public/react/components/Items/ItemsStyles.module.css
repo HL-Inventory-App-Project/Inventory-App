@@ -67,3 +67,8 @@ h1 {
   align-items: center;
   gap: 60px;
 }
+
+textarea{
+  width: 500px;
+  height: 250px;
+}

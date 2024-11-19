@@ -80,7 +80,7 @@ function Items() {
             </label>
             <label>
               Enter description:
-              <input
+              <textarea
                 type="text"
                 value={formDescription}
                 onChange={(e) => setDescription(e.target.value)}
