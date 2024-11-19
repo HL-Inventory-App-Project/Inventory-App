@@ -20,8 +20,6 @@ function SingleItem() {
     fetchItem();
   }, []);
 
-  console.log(item);
-
   return (
     <>
       <h1>Single Item</h1>
