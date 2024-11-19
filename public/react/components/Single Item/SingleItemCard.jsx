@@ -14,6 +14,10 @@ function ItemCard({ link, name, src, description, price, category }) {
 		}
 	  }
 
+	  function goHome() {
+		window.location.pathname = "";
+	  }
+
   return (
     <div>
     	<img src={src}></img>
@@ -24,6 +28,7 @@ function ItemCard({ link, name, src, description, price, category }) {
 			<h4>Category:</h4>
     		<p>{category}</p>
 			<button onClick={deleteItem}>Delete Item</button>
+			<button onClick={goHome}>Back to Home</button>
 		</div>
     </div>
   )
