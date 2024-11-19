@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./ItemsStyles.module.css";
 import ItemsCard from './ItemsCard';
 
+
 function Items() {
   const [items, setItems] = useState([]);
 
@@ -25,7 +26,16 @@ function Items() {
     <h1>Items</h1>
     <section id="items">
       <div className={styles.itemsContainer}>
-	  {items.map((item) => <ItemsCard name={item.name} description={item.description} price={item.price} category={item.category} src={item.image} link="random"/>)}
+	  {items.map((item) => 
+    <ItemsCard 
+    name={item.name} 
+    description={item.description} 
+    price={item.price} 
+    category={item.category} 
+    src={item.image} 
+    link={item.id}
+    />
+    )}
       </div>
     </section>
     </>

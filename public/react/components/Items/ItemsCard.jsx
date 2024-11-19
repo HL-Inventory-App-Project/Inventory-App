@@ -3,7 +3,7 @@ import styles from "./ItemsStyles.module.css";
 
 function ItemsCard({ link, name, src, description, price, category }) {
   return (
-    <div className={styles.item}>
+    <a href={link} className={styles.item}>
     	<img src={src}></img>
 		<div className={styles.itemText}>
     		<h3>{name}</h3>
@@ -12,7 +12,7 @@ function ItemsCard({ link, name, src, description, price, category }) {
 			<h4>Category:</h4>
     		<p>{category}</p>
 		</div>
-    </div>
+    </a>
   )
 }
 

@@ -56,10 +56,6 @@ p {
   max-width: 25ch;
 }
 
-h1 {
-  font-family: "Sour Gummy";
-}
-
 .itemsContainer {
   display: flex;
   flex-wrap: wrap;
