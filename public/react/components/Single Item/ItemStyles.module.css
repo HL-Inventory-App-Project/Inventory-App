@@ -7,10 +7,8 @@
 img {
   display: flex;
   width: 300px;
-  align-content: center;
   border-radius: 10px;
   max-height: 300px;
-  justify-content: start;
   padding: 5px;
 }
 
@@ -27,6 +25,7 @@ img {
   font-size: large;
   display: flex;
   flex-direction: column;
+  padding-left: 10px;
 }
 
 p {
@@ -48,9 +47,10 @@ button {
   color: whitesmoke;
   border: none;
   text-align: center;
+  font-family: "Sour Gummy";
   font-size: 16px;
   padding: 10px;
-  width: 150px;
+  width: fit-content;
   margin: 5px;
   transition: all 500ms;
   cursor: pointer;
@@ -96,4 +96,14 @@ label{
 textarea{
   width: 500px;
   height: 250px;
+}
+
+input,
+textarea {
+  border-radius: 20px;
+  border: #888 1px solid;
+  box-sizing: border-box;
+  justify-self: center;
+  background-color: var(--background-color);
+  color: var(--form-text-color);
 }
