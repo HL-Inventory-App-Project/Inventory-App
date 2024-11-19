@@ -1,65 +1,80 @@
 .container {
   display: flex;
-  flex-direction: column;
   text-align: center;
   gap: 50px;
 }
 
 img {
   width: 250px;
-  align-self: center;
-  border-radius: 20px;
+  align-content: flex-end;
+  border-radius: 10px;
   max-height: 275px;
+  justify-content: end;
 }
 
 .item {
-  width: 300px;
   height: 600px;
   text-decoration: none;
-  color: #222;
-  background-color: whitesmoke;
-  transition: transform 500ms ease-in-out;
+  color: white;
   padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.itemText {
+  font-size: large;
   display: flex;
   flex-direction: column;
 }
 
-.itemText {
-  text-overflow: ellipsis;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-.itemText::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  margin-top: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.item:hover {
-  transform: scale(1.15);
-  background-color: antiquewhite;
-}
-
 p {
-  max-width: 25ch;
+  max-width: fit-content;
 }
 
 .itemsContainer {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 60px;
+}
+
+button {
+  display: inline-block;
+  border-radius: 8px;
+  background-color:grey;
+  color: whitesmoke;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 150px;
+  margin: 5px;
+  transition: all 500ms;
+  cursor: pointer;
+}
+
+button span {
+  transition: 500ms;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+button span:after {
+  content: '\2728';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 500ms;
+}
+
+button:hover span {
+  padding-right: 27px;
+}
+
+button:hover span:after {
+  opacity: 2;
+  right: 0;
 }
