@@ -1,6 +1,19 @@
 import React from 'react'
 
 function ItemCard({ link, name, src, description, price, category }) {
+
+	async function deleteItem() {
+		try {
+		  const response = await fetch("http://localhost:3000/api/items" + window.location.pathname, {
+			method: 'DELETE'
+		  }
+		  );
+		  window.location.pathname = "";
+		} catch (err) {
+		  console.log("There was an error deleting item", err);
+		}
+	  }
+
   return (
     <div>
     	<img src={src}></img>
@@ -10,6 +23,7 @@ function ItemCard({ link, name, src, description, price, category }) {
     		<p>{description}</p>
 			<h4>Category:</h4>
     		<p>{category}</p>
+			<button onClick={deleteItem}>Delete Item</button>
 		</div>
     </div>
   )
