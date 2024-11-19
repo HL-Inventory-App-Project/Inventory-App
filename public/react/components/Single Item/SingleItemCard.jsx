@@ -91,6 +91,7 @@ function ItemCard({ link, name, src, description, price, category }) {
                 type="text"
                 value={formName}
                 onChange={(e) => setName(e.target.value)}
+                required
               />
             </label>
             <label>
@@ -99,15 +100,17 @@ function ItemCard({ link, name, src, description, price, category }) {
                 type="text"
                 value={formDescription}
                 onChange={(e) => setDescription(e.target.value)}
+                required
               />
             </label>
             <label>
               Enter price:
               <input
                 type="text"
-				placeholder="£"
+				        placeholder="£"
                 value={formPrice}
                 onChange={(e) => setPrice(e.target.value)}
+                required
               />
             </label>
             <label>
@@ -116,6 +119,7 @@ function ItemCard({ link, name, src, description, price, category }) {
                 type="text"
                 value={formCategory}
                 onChange={(e) => setCategory(e.target.value)}
+                required
               />
             </label>
             <label>
@@ -124,6 +128,7 @@ function ItemCard({ link, name, src, description, price, category }) {
                 type="text"
                 value={formImage}
                 onChange={(e) => setImage(e.target.value)}
+                required
               />
             </label>
             <input type="submit" />
