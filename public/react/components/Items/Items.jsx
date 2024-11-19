@@ -27,7 +27,6 @@ function Items() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    console.log("test");
     try {
       const response = await fetch(
         "http://localhost:3000/api/items" + window.location.pathname,

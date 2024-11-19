@@ -22,12 +22,10 @@ function ItemCard({ link, name, src, description, price, category }) {
   const [formPrice, setPrice] = useState(price);
   const [formCategory, setCategory] = useState(category);
   const [formImage, setImage] = useState(src);
-  
   const [formHidden, setHidden] = useState(true);
 
   async function handleSubmit(event) {
     event.preventDefault();
-    console.log("test");
     try {
       const response = await fetch(
         "http://localhost:3000/api/items" + window.location.pathname,
@@ -90,6 +88,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               <input
                 type="text"
                 value={formName}
+		defaultValue={name}
                 onChange={(e) => setName(e.target.value)}
                 required
               />
@@ -99,6 +98,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               <textarea
                 type="text"
                 value={formDescription}
+		defaultValue={description}
                 onChange={(e) => setDescription(e.target.value)}
                 required
               />
@@ -109,6 +109,7 @@ function ItemCard({ link, name, src, description, price, category }) {
                 type="text"
 				        placeholder="£"
                 value={formPrice}
+		defaultValue={"£" + price}
                 onChange={(e) => setPrice(e.target.value)}
                 required
               />
@@ -118,6 +119,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               <input
                 type="text"
                 value={formCategory}
+		defaultValue={category}
                 onChange={(e) => setCategory(e.target.value)}
                 required
               />
@@ -127,6 +129,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               <input
                 type="text"
                 value={formImage}
+		defaultValue={src}
                 onChange={(e) => setImage(e.target.value)}
                 required
               />
