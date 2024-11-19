@@ -22,6 +22,7 @@ function ItemCard({ link, name, src, description, price, category }) {
   const [formPrice, setPrice] = useState(price);
   const [formCategory, setCategory] = useState(category);
   const [formImage, setImage] = useState(src);
+  
   const [formHidden, setHidden] = useState(true);
 
   async function handleSubmit(event) {
