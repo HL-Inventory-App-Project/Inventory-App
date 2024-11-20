@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import styles from "./ItemsStyles.module.css";
 import ItemsCard from './ItemsCard';
 
+// Prepend the API URL to any fetch calls.
+import apiURL from "../api";
 
 function Items() {
   const [items, setItems] = useState([]);
 
   async function fetchItems() {
     try{
-      const response = await fetch("http://localhost:3000/api/items");
+      const response = await fetch(`${apiURL}/items`);
       const itemsData = await response.json();
       setItems(itemsData);
     }
@@ -29,7 +31,7 @@ function Items() {
     event.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:3000/api/items" + window.location.pathname,
+        `${apiURL}/items${window.location.pathname}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

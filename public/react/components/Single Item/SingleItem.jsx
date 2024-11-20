@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import ItemCard from "./SingleItemCard";
 
+// Prepend the API URL to any fetch calls.
+import apiURL from "../api";
+
 function SingleItem() {
   const [item, setItem] = useState([]);
 
   async function fetchItem() {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/items" + window.location.pathname
+        `${apiURL}/items${window.location.pathname}`
       );
       const itemData = await response.json();
       setItem(itemData);

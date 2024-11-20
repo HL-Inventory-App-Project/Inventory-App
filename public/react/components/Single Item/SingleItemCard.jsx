@@ -2,11 +2,14 @@ import React from "react";
 import { useState } from "react";
 import styles from "./ItemStyles.module.css";
 
+// Prepend the API URL to any fetch calls.
+import apiURL from "../api";
+
 function ItemCard({ link, name, src, description, price, category }) {
   async function deleteItem() {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/items" + window.location.pathname,
+        `${apiURL}/items${window.location.pathname}`,
         {
           method: "DELETE",
         }
@@ -29,7 +32,7 @@ function ItemCard({ link, name, src, description, price, category }) {
     event.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:3000/api/items" + window.location.pathname,
+        `${apiURL}/items${window.location.pathname}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
