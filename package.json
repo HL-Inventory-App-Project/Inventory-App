@@ -6,7 +6,8 @@
     "client-dev": "rm -rf .parcel-cache && parcel public/index.html --open",
     "server-dev": "nodemon server.js",
     "seed": "node server/seed.js",
-    "start": "parcel build public/index.html && (node client.js &) && npm run seed && node server.js"
+    "client-prod": "parcel build public/index.html && node client.js",
+    "server-prod": "npm run seed && node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
