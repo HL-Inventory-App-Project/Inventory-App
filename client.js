@@ -8,7 +8,11 @@ const server = http.createServer((request, response) => {
   // More details here: https://github.com/vercel/serve-handler#options
   return handler(request, response,
 	  {
-	public: "dist"
+	public: "dist",
+	// Ensure every route is served the index.html file for react routing to work
+	rewrites: [
+    		{ "source": "*", "destination": "index.html" },
+  	]
   });
 });
 
