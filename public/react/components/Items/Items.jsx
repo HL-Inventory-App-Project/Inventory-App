@@ -112,7 +112,7 @@ function Items() {
                 onChange={(e) => setImage(e.target.value)}
               />
             </label>
-            <input type="submit" />
+            <input type="submit" value="Submit"/>
           </form>
         )}
     <section id="items">
