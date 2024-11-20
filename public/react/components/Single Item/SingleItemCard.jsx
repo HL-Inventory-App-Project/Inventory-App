@@ -116,13 +116,14 @@ function ItemCard({ link, name, src, description, price, category }) {
             </label>
             <label>
               Enter category:
-              <input
+              <select onChange={(e) => setCategory(e.target.value)} className="category">
                 type="text"
                 value={formCategory}
-                defaultValue={category}
-                onChange={(e) => setCategory(e.target.value)}
-                required
-              />
+                <option value="men's clothing">men's clothing</option>
+                <option value="jewelery">jewelery</option>
+                <option value="electronics">electronics</option>
+                <option value="women's clothing">women's clothing</option>
+              </select>
             </label>
             <label>
               Enter image:

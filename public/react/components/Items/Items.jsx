@@ -20,7 +20,7 @@ function Items() {
   const [formName, setName] = useState("");
   const [formDescription, setDescription] = useState("");
   const [formPrice, setPrice] = useState(0);
-  const [formCategory, setCategory] = useState("");
+  const [formCategory, setCategory] = useState("men's clothing");
   const [formImage, setImage] = useState("");
 
   const [formHidden, setHidden] = useState(true);
@@ -95,14 +95,13 @@ function Items() {
             </label>
             <label>
               Enter category:
-              <select className="category">
+              <select onChange={(e) => setCategory(e.target.value)} className="category">
                 type="text"
                 value={formCategory}
-                <option value="mens clothing">mens clothing</option>
-                <option value="jewllery">jewllery</option>
+                <option value="men's clothing">men's clothing</option>
+                <option value="jewelery">jewelery</option>
                 <option value="electronics">electronics</option>
-                <option value="womens clothing">womens clothing</option>
-                onChange={(e) => setCategory(e.target.value)}
+                <option value="women's clothing">women's clothing</option>
               </select>
             </label>
             <label>
