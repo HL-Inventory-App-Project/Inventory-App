@@ -90,14 +90,16 @@ function Items() {
                 onChange={(e) => setDescription(e.target.value)}
               />
             </label>
-            <label>
-              Enter price:
-              <input
-                type="number"
-                value={formPrice}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-            </label>
+	      <div className={styles.priceField}>
+	        <span>£</span>
+                <input
+                  type="number"
+                  placeholder="£"
+                  value={formPrice}
+                  onChange={(e) => setPrice(e.target.value)}
+                  required
+                />
+	      </div>
             <label>
               Enter category:
               <select onChange={(e) => setCategory(e.target.value)} className="category">

@@ -94,6 +94,11 @@ label{
   padding: 10px;
 }
 
+.priceField {
+  display: flex;
+  flex-direction: row;
+}
+
 textarea{
   width: 500px;
   height: 250px;

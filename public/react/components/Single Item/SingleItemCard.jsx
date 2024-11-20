@@ -113,13 +113,16 @@ function ItemCard({ link, name, src, description, price, category }) {
             </label>
             <label>
               Enter price:
-              <input
-                type="number"
-                placeholder="£"
-                value={"£" + formPrice || "£" + price}
-                onChange={(e) => setPrice(e.target.value)}
-                required
-              />
+	      <div className={styles.priceField}>
+	        <span>£</span>
+                <input
+                  type="number"
+                  placeholder="£"
+                  value={formPrice || price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  required
+                />
+	      </div>
             </label>
             <label>
               Enter category:
