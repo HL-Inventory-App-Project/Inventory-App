@@ -3,7 +3,7 @@ import styles from "./ItemsStyles.module.css";
 import ItemsCard from './ItemsCard';
 
 // Prepend the API URL to any fetch calls.
-import apiURL from "../api";
+import apiURL from "../../api";
 
 function Items() {
   const [items, setItems] = useState([]);

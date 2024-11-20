@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemCard from "./SingleItemCard";
 
 // Prepend the API URL to any fetch calls.
-import apiURL from "../api";
+import apiURL from "../../api";
 
 function SingleItem() {
   const [item, setItem] = useState([]);

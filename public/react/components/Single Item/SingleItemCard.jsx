@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./ItemStyles.module.css";
 
 // Prepend the API URL to any fetch calls.
-import apiURL from "../api";
+import apiURL from "../../api";
 
 function ItemCard({ link, name, src, description, price, category }) {
   async function deleteItem() {
