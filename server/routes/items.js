@@ -31,14 +31,30 @@ router.get("/:id", async (req, res) => {
 });
 
 //post Item to add item
-router.post("/", async (req, res) => {
-  try {
-    const newItem = await Item.create(req.body);
-    res.status(201).json(newItem);
-  } catch (err) {
-    res.status(400).json({ err: "Failed to add item" });
+router.post("/", 
+  [
+    body("name").isString().withMessage("Name must be a string"),
+    body("description").isString().withMessage("Description must be a string"),
+    body("price").isFloat().withMessage("Price must be anumber"),
+    body("category")
+      .isIn(["jewelery", "electronics", "women's clothing", "men's clothing"])
+      .withMessage("Invalid category"),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      console.log(errors.array())
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const newItem = await Item.create(req.body);
+      res.status(201).json(newItem);
+    } catch (err) {
+      res.status(400).json({ err: "Failed to add item" });
+    }
   }
-});
+);
 
 //Delete Items
 router.delete("/:id", async (req, res) => {
