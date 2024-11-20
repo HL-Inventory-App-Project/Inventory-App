@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === "development") {
 } else {
   // Production
   // Hardcoding the apiURL for this example. Ideally you'd have the api on something like https://api.hl-inventory-app.com in a real world scenario so the strings would be easier to concatenate
-  apiURL = `https://hl-inventory-app-api.onrender.com`;
+  apiURL = `https://hl-inventory-app-api.onrender.com/api`;
 }
 
 export default apiURL;
