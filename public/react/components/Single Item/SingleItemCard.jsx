@@ -23,6 +23,7 @@ function ItemCard({ link, name, src, description, price, category }) {
   const [formCategory, setCategory] = useState(category);
   const [formImage, setImage] = useState(src);
   const [formHidden, setHidden] = useState(true);
+  const [confirmDelete, setConfirmDelete] = useState(false)
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -55,6 +56,15 @@ function ItemCard({ link, name, src, description, price, category }) {
     window.location.pathname = "";
   }
 
+  function handleConfirm() {
+    setConfirmDelete(true)
+  }
+
+  function handleDelete() {
+    deleteItem()
+    setConfirmDelete(false)
+  }
+
   return (
     <div className={styles.item}>
       <img src={src}></img>
@@ -69,8 +79,8 @@ function ItemCard({ link, name, src, description, price, category }) {
             <span>Edit Item</span>
           </button>
 
-          <button onClick={deleteItem}>
-            <span>Delete Item</span>
+          <button onClick={confirmDelete ? handleDelete : handleConfirm}>
+            <span>{confirmDelete ? "Are you sure?" : "Delete Item"}</span>
           </button>
 
           <button onClick={goHome}>
