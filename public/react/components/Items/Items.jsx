@@ -122,8 +122,9 @@ function Items() {
         )}
     <section id="items">
       <div className={styles.itemsContainer}>
-	  {items.map((item) => 
+	  {items.map((item, index) => 
     <ItemsCard 
+    key={index}
     name={item.name} 
     description={item.description} 
     price={item.price} 
