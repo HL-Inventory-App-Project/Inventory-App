@@ -97,8 +97,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               Enter name:
               <input
                 type="text"
-                value={formName}
-                defaultValue={name}
+                value={formName || name}
                 onChange={(e) => setName(e.target.value)}
                 required
               />
@@ -107,8 +106,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               Enter description:
               <textarea
                 type="text"
-                value={formDescription}
-                defaultValue={description}
+                value={formDescription || description}
                 onChange={(e) => setDescription(e.target.value)}
                 required
               />
@@ -118,8 +116,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               <input
                 type="text"
                 placeholder="£"
-                value={formPrice}
-                defaultValue={"£" + price}
+                value={"£" + formPrice || "£" + price}
                 onChange={(e) => setPrice(e.target.value)}
                 required
               />
@@ -139,8 +136,7 @@ function ItemCard({ link, name, src, description, price, category }) {
               Enter image:
               <input
                 type="text"
-                value={formImage}
-                defaultValue={src}
+                value={formImage || src}
                 onChange={(e) => setImage(e.target.value)}
                 required
               />
