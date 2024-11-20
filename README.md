@@ -2,6 +2,7 @@
 
 # Deployed App
 API Backend URL: https://hl-inventory-app-api.onrender.com
+
 Frontend Client URL: https://hl-inventory-app.onrender.com
 
 # Inventory App
