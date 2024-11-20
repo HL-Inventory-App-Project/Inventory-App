@@ -88,6 +88,62 @@ describe("POST /api/items", () => {
             })
         )
     });
+
+    it("returns an error if name isn't a string", async () => {
+        const response = await request(app)
+        .post("/api/items")
+        .send({
+            name: 52,
+            price: 109.95,
+            description: "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            category: "men's clothing",
+            image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+         });
+        expect(response.body).toHaveProperty("errors");
+        expect(Array.isArray(response.body.errors)).toBe(true);
+    });
+
+    it("returns an error if decription isn't a string", async () => {
+        const response = await request(app)
+        .post("/api/items")
+        .send({
+            name: "Backpack",
+            price: 109.95,
+            description: 897,
+            category: "men's clothing",
+            image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+         });
+        expect(response.body).toHaveProperty("errors");
+        expect(Array.isArray(response.body.errors)).toBe(true);
+    });
+
+    it("returns an error if price isn't a number", async () => {
+        const response = await request(app)
+        .post("/api/items")
+        .send({
+            name: "Backpack",
+            price: "hello",
+            description: "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            category: "men's clothing",
+            image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+         });
+        expect(response.body).toHaveProperty("errors");
+        expect(Array.isArray(response.body.errors)).toBe(true);
+    });
+
+    it("returns an error if category isn't one of the pre-defined categories", async () => {
+        const response = await request(app)
+        .post("/api/items")
+        .send({
+            name: "Backpack",
+            price: 15.99,
+            description: "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            category: "accessories",
+            image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+         });
+        expect(response.body).toHaveProperty("errors");
+        expect(Array.isArray(response.body.errors)).toBe(true);
+    });
 });
 
 describe("PUT /api/items/:id", () => {
