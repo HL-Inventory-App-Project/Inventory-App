@@ -36,7 +36,7 @@ function Items() {
           body: JSON.stringify({
             name: formName,
             description: formDescription,
-            price: formPrice,
+            price: Number(formPrice),
             category: formCategory,
             image: formImage,
           }),
@@ -95,11 +95,15 @@ function Items() {
             </label>
             <label>
               Enter category:
-              <input
+              <select className="category">
                 type="text"
                 value={formCategory}
+                <option value="mens clothing">mens clothing</option>
+                <option value="jewllery">jewllery</option>
+                <option value="electronics">electronics</option>
+                <option value="womens clothing">womens clothing</option>
                 onChange={(e) => setCategory(e.target.value)}
-              />
+              </select>
             </label>
             <label>
               Enter image:

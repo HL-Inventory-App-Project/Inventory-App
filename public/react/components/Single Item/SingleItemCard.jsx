@@ -33,11 +33,11 @@ function ItemCard({ link, name, src, description, price, category }) {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            name: formName,
-            description: formDescription,
-            price: formPrice,
-            category: formCategory,
-            image: formImage,
+            name: formName||name,
+            description: formDescription||description,
+            price: Number(formPrice)||Number(price),
+            category: formCategory||category,
+            image: formImage||src,
           }),
         }
       );
