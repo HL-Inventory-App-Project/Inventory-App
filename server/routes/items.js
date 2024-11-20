@@ -58,7 +58,6 @@ router.delete("/:id", async (req, res) => {
 router.put(
   "/:id",
   [
-    param("id").isInt().withMessage("Invalid item ID"),
     body("name").isString().withMessage("Name must be a string"),
     body("description").isString().withMessage("Description must be a string"),
     body("price").isFloat().withMessage("Price must be anumber"),
