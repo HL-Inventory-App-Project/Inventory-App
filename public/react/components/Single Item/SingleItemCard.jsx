@@ -117,8 +117,7 @@ function ItemCard({ link, name, src, description, price, category }) {
 	        <span>£</span>
                 <input
                   type="number"
-                  placeholder="£"
-                  value={formPrice || price}
+                  value={formPrice >= 0 ? formPrice : price}
                   onChange={(e) => setPrice(e.target.value)}
                   required
                 />

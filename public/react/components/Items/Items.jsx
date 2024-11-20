@@ -90,6 +90,8 @@ function Items() {
                 onChange={(e) => setDescription(e.target.value)}
               />
             </label>
+            <label>
+              Enter price:
 	      <div className={styles.priceField}>
 	        <span>£</span>
                 <input
@@ -100,6 +102,7 @@ function Items() {
                   required
                 />
 	      </div>
+            </label>
             <label>
               Enter category:
               <select onChange={(e) => setCategory(e.target.value)} className="category">
