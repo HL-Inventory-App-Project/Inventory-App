@@ -96,8 +96,7 @@ function Items() {
 	        <span>£</span>
                 <input
                   type="number"
-                  placeholder="£"
-                  value={formPrice}
+                  value={formPrice >= 0 ? formPrice : 0}
                   onChange={(e) => setPrice(e.target.value)}
                   required
                 />
