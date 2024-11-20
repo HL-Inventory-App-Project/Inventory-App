@@ -93,7 +93,7 @@ function Items() {
             <label>
               Enter price:
               <input
-                type="text"
+                type="number"
                 value={formPrice}
                 onChange={(e) => setPrice(e.target.value)}
               />

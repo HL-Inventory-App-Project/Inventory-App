@@ -114,7 +114,7 @@ function ItemCard({ link, name, src, description, price, category }) {
             <label>
               Enter price:
               <input
-                type="text"
+                type="number"
                 placeholder="£"
                 value={"£" + formPrice || "£" + price}
                 onChange={(e) => setPrice(e.target.value)}
