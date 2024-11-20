@@ -57,7 +57,12 @@ function Items() {
     fetchItems()
   }, []);
 
-  return ( <>
+  return items.length==0 ? ( <>
+  <h1>Items</h1>
+  <h2>There are no items available.</h2>
+  </>)
+      : 
+   ( <>
     <h1>Items</h1>
     <button onClick={hideForm}>
           <span>Add Item</span>
@@ -132,6 +137,8 @@ function Items() {
     </section>
     </>
   )
-}
+     }
+    
+
 
 export default Items
