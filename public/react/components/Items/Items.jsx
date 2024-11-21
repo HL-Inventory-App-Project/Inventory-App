@@ -59,14 +59,9 @@ function Items() {
     fetchItems()
   }, []);
 
-  return items.length==0 ? ( <>
+  return (<>
   <h1>Items</h1>
-  <h2>There are no items available.</h2>
-  </>)
-      : 
-   ( <>
-    <h1>Items</h1>
-    <button onClick={hideForm}>
+  <button onClick={hideForm}>
           <span>Add Item</span>
         </button>
 
@@ -126,6 +121,11 @@ function Items() {
             <input type="submit" value="Submit"/>
           </form>
         )}
+  { items.length==0 ? (
+  <h2>There are no items available.</h2>
+  )
+      : 
+   ( <>
     <section id="items">
       <div className={styles.itemsContainer}>
 	  {items.map((item, index) => 
@@ -140,10 +140,11 @@ function Items() {
     />
     )}
       </div>
-    
     </section>
     </>
   )
+}
+  </>)
      }
     
 
